@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(3, 29, 38);
+}
+.myheader {
+  position: fixed;
+  top: 3px;
+  background-color: rgba(0, 0, 0, 0.484);
+
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.galleryView {
+  /* display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 10px;
+  margin: 3px;
+}
+@media (min-width: 300px) {
+  .galleryView {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.ImageContainer {
+  margin: 0%;
+  padding: 0;
+}
+
+.ImageContainer img {
+  max-width: 110px;
+  height: 100%;
+  padding: 3px;
+}
+
+.backgroundImage img {
+  width: 100%;
+  position: relative;
+}
+
+.ImageContainer img:hover {
+  transform: scale(1.2);
+  border: 2px solid wheat;
+}
+
+.buttonContainer {
+  z-index: 6;
+  position: absolute;
+  top: 50%;
+  display: flex;
+  width: 100%;
+}
+
+.buttonContainer button {
+  padding: 10px;
+  border-radius: 150px;
+  height: 150px;
+  width: 150px;
+  background-color: rgba(0, 0, 0, 0.521);
+  color: rgba(255, 255, 255, 0.425);
+  font-family: sans-serif;
+  font-weight: 800;
+  font-size: larger;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  cursor: pointer;
+}
+
+.nextButton {
+  position: absolute;
+  right: 5px;
+}
+.backButton {
+  position: absolute;
+  left: 5px;
+}
+
+.nextButton:hover {
+  animation: btnColor 0.2s ease-in-out forwards;
+}
+.backButton:hover {
+  animation: btnColor 0.2s ease-in-out forwards;
+}
+@keyframes btnColor {
+  0% {
+    background-color: rgba(0, 0, 0, 0.521);
+
+    color: rgba(255, 255, 255, 0.322);
+  }
+  100% {
+    background-color: rgb(81, 147, 253);
+    color: rgb(255, 255, 255);
+  }
+}
