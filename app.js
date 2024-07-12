@@ -67,22 +67,22 @@ previousButton.addEventListener("click", function () {
 const nextButton = document.getElementById("NextButton");
 
 nextButton.addEventListener("click", function () {
-  var imageElement = section.querySelector("img");
-  console.log(imageElement.src);
-  let curIndex = 0;
+  var ImageElement = section.querySelector("img");
+  console.log(ImageElement.src);
+  let CurIndex = 0;
   for (let i = 0; i < Gallery.length; i++) {
-    if (imageElement.src == GitURL + Gallery[i].CheckingSrc) {
-      curIndex = i;
+    if (ImageElement.src == GitURL + Gallery[i].CheckingSrc) {
+      CurIndex = i;
       console.log("picture is found index is: " + i);
     }
   }
-  curIndex++;
-  if (curIndex < Gallery.length) {
+  CurIndex++;
+  if (CurIndex < Gallery.length) {
     console.log("index is fine");
-    section.innerHTML = `<img id="selectedImage${curIndex}" src="${Gallery[curIndex].ImageSrc}" alt="${Gallery[curIndex].Alt}" />`;
+    section.innerHTML = `<img id="selectedImage${CurIndex}" src="${Gallery[CurIndex].ImageSrc}" alt="${Gallery[CurIndex].Alt}" />`;
   } else {
     console.log("index is set to min");
-    curIndex = 0;
-    section.innerHTML = `<img id="selectedImage${curIndex}" src="${Gallery[curIndex].ImageSrc}" alt="${Gallery[curIndex].Alt}" />`;
+    CurIndex = 0;
+    section.innerHTML = `<img id="selectedImage${CurIndex}" src="${Gallery[CurIndex].ImageSrc}" alt="${Gallery[CurIndex].Alt}" />`;
   }
 });
