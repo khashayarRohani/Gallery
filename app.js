@@ -55,9 +55,12 @@ previousButton.addEventListener("click", function () {
   }
   curIndex--;
   if (curIndex < 0) {
+    console.log("index is set to max");
+
     curIndex = Gallery.length - 1;
     section.innerHTML = `<img id="selectedImage${curIndex}" src="${Gallery[curIndex].ImageSrc}" alt="${Gallery[curIndex].Alt}" />`;
   } else {
+    console.log("index is fine");
     section.innerHTML = `<img id="selectedImage${curIndex}" src="${Gallery[curIndex].ImageSrc}" alt="${Gallery[curIndex].Alt}" />`;
   }
 });
