@@ -71,15 +71,17 @@ nextButton.addEventListener("click", function () {
   console.log(imageElement.src);
   let curIndex = 0;
   for (let i = 0; i < Gallery.length; i++) {
-    if (imageElement.src == URL + Gallery[i].CheckingSrc) {
+    if (imageElement.src == GitURL + Gallery[i].CheckingSrc) {
       curIndex = i;
-      console.log("it is found: " + i);
+      console.log("picture is found index is: " + i);
     }
   }
   curIndex++;
   if (curIndex < Gallery.length) {
+    console.log("index is fine");
     section.innerHTML = `<img id="selectedImage${curIndex}" src="${Gallery[curIndex].ImageSrc}" alt="${Gallery[curIndex].Alt}" />`;
   } else {
+    console.log("index is set to min");
     curIndex = 0;
     section.innerHTML = `<img id="selectedImage${curIndex}" src="${Gallery[curIndex].ImageSrc}" alt="${Gallery[curIndex].Alt}" />`;
   }
