@@ -50,9 +50,6 @@ body {
   height: 100%;
   padding: 3px;
 }
-.myImage:focus {
-  transform: scale(1.2);
-}
 .backgroundImage img {
   width: 100%;
   position: relative;
