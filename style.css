@@ -10,11 +10,14 @@ body {
   position: fixed;
   top: 3px;
   background-color: rgba(0, 0, 0, 0.484);
-
   border-radius: 10px;
   z-index: 1;
 }
-
+@media (max-width: 300px) {
+  .myheader {
+    max-width: 110px;
+  }
+}
 .galleryView {
   /* display: grid;
   grid-template-columns: 1fr;
@@ -34,7 +37,6 @@ body {
 .ImageContainer {
   margin: 0%;
   padding: 0;
-  max-width: 110px;
 }
 
 .ImageContainer img {
