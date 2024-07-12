@@ -119,11 +119,66 @@ function NEXTbutton() {
   });
 }
 NEXTbutton();
+//arrow Right to change picture to Next one
+function ARNext() {
+  var ImageElement = section.querySelector("img");
+  console.log(ImageElement.src);
+  let CurIndex = 0;
+  for (let i = 0; i < Gallery.length; i++) {
+    if (
+      ImageElement.src == GitURL + Gallery[i].CheckingSrc ||
+      ImageElement.src == URL + Gallery[i].CheckingSrc
+    ) {
+      CurIndex = i;
+      console.log("picture is found index is: " + i);
+    }
+  }
+  CurIndex++;
+  if (CurIndex < Gallery.length) {
+    console.log("index is fine");
+
+    section.innerHTML = `<img id="selectedImage${CurIndex}" src="${Gallery[CurIndex].ImageSrc}" alt="${Gallery[CurIndex].Alt}" />`;
+    ariaReader(Gallery[CurIndex].Alt);
+  } else {
+    console.log("index is set to min");
+    CurIndex = 0;
+    section.innerHTML = `<img id="selectedImage${CurIndex}" src="${Gallery[CurIndex].ImageSrc}" alt="${Gallery[CurIndex].Alt}" />`;
+    ariaReader(Gallery[CurIndex].Alt);
+  }
+}
+//arrow left to change picture to previous
+function ARBack() {
+  var imageElement = section.querySelector("img");
+  console.log(imageElement.src);
+  let curIndex = 0;
+  for (let i = 0; i < Gallery.length; i++) {
+    if (
+      imageElement.src == GitURL + Gallery[i].CheckingSrc ||
+      imageElement.src == URL + Gallery[i].CheckingSrc
+    ) {
+      curIndex = i;
+      console.log("picture is found index is: " + i);
+    }
+  }
+  curIndex--;
+  if (curIndex < 0) {
+    console.log("index is set to max");
+
+    curIndex = Gallery.length - 1;
+    section.innerHTML = `<img id="selectedImage${curIndex}" src="${Gallery[curIndex].ImageSrc}" alt="${Gallery[curIndex].Alt}" />`;
+    ariaReader(Gallery[curIndex].Alt);
+  } else {
+    console.log("index is fine");
+    section.innerHTML = `<img id="selectedImage${curIndex}" src="${Gallery[curIndex].ImageSrc}" alt="${Gallery[curIndex].Alt}" />`;
+    ariaReader(Gallery[curIndex].Alt);
+  }
+}
 document.addEventListener("keydown", function (event) {
-  const mainColor = event.target.style.backgroundColor;
   console.log(event.key);
 
-  if (event.key === "Enter") {
-    event.target.style.backgroundColor = "white";
-  } else if (event.key === "ArrowUp") event.target.style.backgroundColor = mainColor;
+  if (event.key === "ArrowRight") {
+    ARNext();
+  } else if (event.key === "ArrowLeft") {
+    ARBack();
+  }
 });
