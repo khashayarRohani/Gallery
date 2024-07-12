@@ -21,6 +21,7 @@ const Gallery = [
   },
 ];
 const URL = "http://localhost:5500/";
+const GitURL = "https://khashayarrohani.github.io/Gallery/";
 const section = document.getElementById("sec");
 function BackgroundFirstImage() {
   section.innerHTML = `<img src="${Gallery[0].ImageSrc}" alt="${Gallery[0].Alt}" />`;
@@ -47,9 +48,9 @@ previousButton.addEventListener("click", function () {
   console.log(imageElement.src);
   let curIndex = 0;
   for (let i = 0; i < Gallery.length; i++) {
-    if (imageElement.src == URL + Gallery[i].CheckingSrc) {
+    if (imageElement.src == GitURL + Gallery[i].CheckingSrc) {
       curIndex = i;
-      console.log("it is found: " + i);
+      console.log("picture is found index is: " + i);
     }
   }
   curIndex--;
